@@ -2,16 +2,8 @@ import cv2
 import numpy as np
 import glob
 
-# def test1():
-#     src = cv2.imread('./left/left01.jpg')
-#     cv2.namedWindow('input', cv2.WINDOW_AUTOSIZE)
-#     cv2.imshow('input', src)
-#     cv2.waitKey(0)
-#     cv2.destroyAllWindows()
-
-def example1():
+def cal1():
     #https://blog.csdn.net/u010128736/article/details/52875137
-
     # 找棋盘格角点
     # 阈值
     criteria = (cv2.TERM_CRITERIA_EPS + cv2.TERM_CRITERIA_MAX_ITER, 30, 0.001)
@@ -47,13 +39,6 @@ def example1():
     # 标定
     ret, mtx, dist, rvecs, tvecs = cv2.calibrateCamera(objpoints, imgpoints, gray.shape[::-1], None, None)
 
-    print(mtx)
-    print('\n')
-    print(rvecs)
-    print('\n')
-    print(tvecs)
-    print('\n')
-
     # 去畸变
     img2 = cv2.imread('./left/left01.jpg')
     h, w = img2.shape[:2]
@@ -74,4 +59,4 @@ def example1():
 
 
 if __name__ == '__main__':
-    example1()
+    cal1()
