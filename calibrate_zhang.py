@@ -10,7 +10,7 @@ def cal_V(v1, v2):
 
 def err(b, w):
     K = abs(np.matmul(w, b.T))
-    K /= 1e4 # 尽可能提前停止，否则全是0
+    K /=1e3 # 尽可能提前停止，否则全是0
     return sum(K, 0)
 
 def err1(b, w):
@@ -54,7 +54,7 @@ def cal1():
     print(result)
 
     H = np.array(H)
-    B = np.ones([6], dtype = float) * 5e3
+    B = np.ones([6], dtype = float) * 13
     T = []
     for i in range(len(H)):
         h1 = H[i][:, 0]
@@ -103,7 +103,7 @@ def cal1():
     cur_ori = ori[0]
     cur_obj = np.column_stack((cur_obj, tmp))
     cur_ori = np.column_stack((cur_ori, tmp2))
-    cost += sum(sum(abs(np.matmul(np.matmul(A, RT), cur_ori.T) - cur_obj.T), 0), 0)
+    cost += sum(sum(abs(lamd * np.matmul(np.matmul(A, RT), cur_ori.T) - cur_obj.T), 0), 0)
     print(cost)
 
 
