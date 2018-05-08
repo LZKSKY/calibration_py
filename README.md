@@ -10,6 +10,6 @@
 #### As calibresult.y above, config its path and just run it, you will get the H, the A, and cost successively.
 #### However, it has a very tricky problem to optimize B, because of the blind initialization and uncontrollable update. It achieves 180 cost in the first image while the library function gets around 1. Hope to receive good advice.
 
-## 3.The **stero_calibrate.py** is a process for stero calibration.
+## 3.The **stereo_calibrate.py** is a process for stero calibration.
 
-#### Left camera and right camera's pictures are respectively in './left/' and './right/' with size of (640, 480). It first gets each camera's intrinsic matrix and Rotation Matrix and Translation Matrix from camera calibration with the same method as **calibresult**. Then, map image to its stero calibration's result and calculate the depth result with left and right images.
+#### Left camera and right camera's pictures are respectively in './left/' and './right/' with size of (640, 480). It first gets each camera's intrinsic matrix and Rotation Matrix and Translation Matrix from camera calibration with the same method as **calibresult**. Then, map image to its stereo calibration's result and calculate the depth result with left and right images.
