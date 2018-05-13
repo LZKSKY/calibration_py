@@ -12,4 +12,4 @@
 
 ## 3.The **stereo_calibrate.py** is a process for stero calibration.
 
-#### Left camera and right camera's pictures are respectively in './left/' and './right/' with size of (640, 480). It first gets each camera's intrinsic matrix and Rotation Matrix and Translation Matrix from camera calibration with the same method as **calibresult**. Then, map image to its stereo calibration's result and calculate the depth result with left and right images.
+#### Left camera and right camera's pictures are respectively in './left/' and './right/' with size of (640, 480). It first gets each camera's intrinsic matrix, rotation matrix and translation matrix from camera calibration with the same method as **calibresult.py**. Then, map image to its stereo calibration's result and use SGM to calculate the disparity result with left and right images.
